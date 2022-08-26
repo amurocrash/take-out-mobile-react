@@ -1,0 +1,28 @@
+.Counter {
+  display: flex;
+  align-items: center;
+}
+
+.Sub,
+.Add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #FCBF49;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 24rem;
+}
+
+.Sub {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.Count {
+  font-size: 32rem;
+  margin: 0 20rem;
+}

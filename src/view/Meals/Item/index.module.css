@@ -1,0 +1,48 @@
+.Item {
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  padding: 15rem 20rem;
+  align-items: center;
+}
+
+.ImgBox {
+  width: 240rem;
+}
+
+img {
+  width: 100%;
+}
+
+.ContentBox {
+  flex: 1;
+}
+
+.Title {
+  font-weight: normal;
+  font-size: 36rem;
+  margin: 0;
+}
+
+.Desc {
+  font-size: 24rem;
+  color: #bbb;
+  margin: 0;
+  padding-right: 20rem;
+}
+
+.PriceWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rem;
+  padding-right: 20rem;
+}
+
+.Price {
+  font-weight: bold;
+  font-size: 40rem;
+}
+
+.Price::before {
+  content: '￥';
+  font-size: 24rem;
+}

@@ -1,0 +1,36 @@
+.Button {
+  display: inline-block;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.Default {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.Default:active {
+  background-color: #eee;
+}
+
+.Primary {
+  background-color: #fcbf49;
+}
+
+.Primary:active {
+  background-color: #f0b040;
+}
+
+.Disabled, .Disabled:active {
+  background-color: #777;
+  color: #ccc;
+}
+
+.Wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
