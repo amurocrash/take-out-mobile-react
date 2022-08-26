@@ -6,7 +6,6 @@ import classes from './index.module.css'
 export interface ModalProps {
   content?: string
   visible?: boolean
-  onOuterClick?: (e: React.MouseEvent) => void
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
   cancelText?: string
   onCancel?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
@@ -14,7 +13,8 @@ export interface ModalProps {
   onOk?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
-const Modal: FC<ModalProps> = ({ content, visible = false, onOuterClick, onClick, cancelText = '取消', onCancel, okText = '确认', onOk }) => {
+const Modal: FC<ModalProps> = ({ content, visible = false, onClick, cancelText = '取消', onCancel, okText = '确认', onOk }) => {
+
 
   const onCancelClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     onCancel && onCancel(e)
@@ -31,14 +31,13 @@ const Modal: FC<ModalProps> = ({ content, visible = false, onOuterClick, onClick
     e.stopPropagation() // Modal本体被点击时阻止事件往下传播导致其他组件click事件被触发
   }
 
-  const onModalOuterClick = (e: React.MouseEvent) => {
-    onOuterClick && onOuterClick(e)
+  const onModalOuterClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    onCancel && onCancel(e)
     e.stopPropagation()
   }
 
-
   return (
-    visible
+    visible 
     ?
     <Backdrop className={classes.ModalOuter} onClick={onModalOuterClick}>
       <div className={classes.Modal} onClick={onModalBodyClick}>

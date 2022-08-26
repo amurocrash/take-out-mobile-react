@@ -1,10 +1,8 @@
 import React, { FC, useContext, useEffect, useState } from 'react'
-import classes from './index.module.css'
-import BagIcon from '../../../assets/imgs/bag.png'
 import CartContext from '../../../store/cart.context'
 import Detail from './Detail'
-import Button from '../../../components/Button'
 import Checkout from '../Checkout'
+import Bar from './Bar'
 
 const Cart: FC = () => {
   const cartCtx = useContext(CartContext)
@@ -35,40 +33,12 @@ const Cart: FC = () => {
   const [isCheckoutShow, setCheckoutShow] = useState<boolean>(false)
 
   return (
-    <div className={classes.Cart} onClick={handleDetailShow} >
-
+    <div>
       { isDetailShow && <Detail onOuterClick={() => setShowDetail(false)}/> }
 
       { isCheckoutShow && <Checkout onClose={() => setCheckoutShow(false)}/> }
-      
 
-      <div className={classes.IconWrapper}>
-        <img src={BagIcon}/>
-        {
-          cartCtx.totalAmount === 0 
-          ? 
-          null
-          : 
-          <span className={classes.TotalAmount}>{cartCtx.totalAmount}</span>
-        }
-      </div>
-
-      {
-        cartCtx.totalPrice === 0 
-        ?
-        <p className={classes.Zero}>未选购商品</p>
-        :
-        <p className={classes.Price}>{cartCtx.totalPrice}</p>
-      }
-      
-      <Button 
-        className={classes.Button} 
-        type='primary' 
-        disabled={cartCtx.totalAmount === 0} 
-        onClick={handleCheckoutShow}
-        >
-        去结算
-      </Button>
+      <Bar onBarClick={handleDetailShow} onButtonClick={handleCheckoutShow}/>
     </div>
   )
 }

@@ -53,7 +53,7 @@ const Checkout: FC<CheckoutProps> = ({ onClose }) => {
         </footer>
       </div>
 
-      <Bar/>
+      <Bar showBag={false} buttonText='去支付'/>
 
     </div>, 
   checkoutRoot)

@@ -22,7 +22,6 @@ const Detail: FC<DetailProps> = ({ onOuterClick }) => {
     <Backdrop onClick={onBackDropClick}>
       <Modal 
         content='确认清空购物车吗' 
-        onOuterClick={() => setShowConfirm(false)}
         visible={showConfrim} 
         onCancel={() => setShowConfirm(false)}
         onOk={() => cartCtx.clearAllItems && cartCtx.clearAllItems() }
