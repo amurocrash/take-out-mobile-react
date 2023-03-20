@@ -19,12 +19,12 @@ const Item: FC<ItemProps> = ({ mealData, showDetail = true, priceContentSeq = 'n
       key='counter'
       amount={mealData.amount} 
       onAdd={() => { 
-        if (cartCtx.addItem) { 
-          cartCtx.addItem(mealData)
+        if (cartCtx.dispatcher) { 
+          cartCtx.dispatcher({ type: 'ADD', payload: mealData })
         }}} 
       onSub={() => {
-        if (cartCtx.removeItem) {
-          cartCtx.removeItem(mealData)
+        if (cartCtx.dispatcher) {
+          cartCtx.dispatcher({ type: 'REMOVE', payload: mealData })
         }
       }}/>
   ]

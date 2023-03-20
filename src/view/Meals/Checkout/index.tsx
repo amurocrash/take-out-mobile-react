@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect } from 'react'
+import React, { FC, useContext } from 'react'
 import ReactDOM from 'react-dom'
 import CartContext from '../../../store/cart.context'
 import Item from '../Item'
@@ -14,11 +14,11 @@ export interface CheckoutProps {
 const Checkout: FC<CheckoutProps> = ({ onClose }) => {
   const cartCtx = useContext(CartContext)
 
-  useEffect(() => {
-    if (cartCtx.totalAmount === 0) {
-      onClose()
-    }
-  }, [cartCtx.totalAmount])
+  // useEffect(() => {
+  //   if (cartCtx.totalAmount === 0) {
+  //     onClose()
+  //   }
+  // }, [cartCtx.totalAmount])
 
   return ReactDOM.createPortal(
     <div className={classes.Checkout}>

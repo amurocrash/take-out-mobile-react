@@ -1,13 +1,14 @@
 import React from 'react'
-import { MealDataProps } from '../view/Meals'
+import { MealDataProps, ReducerAction } from '../view/Meals'
 
 export interface CartProps<T> {
   items: T[]
   totalAmount: number
   totalPrice: number
-  addItem?: (item: T) => void
-  removeItem?: (item: T) => void
-  clearAllItems?: () => void
+  dispatcher?: React.Dispatch<ReducerAction<T>>
+  // addItem?: (item: T) => void
+  // removeItem?: (item: T) => void
+  // clearAllItems?: () => void
 }
 
 const CartContext = React.createContext<CartProps<MealDataProps>>({

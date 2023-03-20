@@ -24,7 +24,7 @@ const Detail: FC<DetailProps> = ({ onOuterClick }) => {
         content='确认清空购物车吗' 
         visible={showConfrim} 
         onCancel={() => setShowConfirm(false)}
-        onOk={() => cartCtx.clearAllItems && cartCtx.clearAllItems() }
+        onOk={() => cartCtx.dispatcher && cartCtx.dispatcher({ type: 'CLEAR' }) }
       />
 
       {/* 阻止点击关闭的事件冒泡，可实现Backdrop灰色区域点击关闭 */}

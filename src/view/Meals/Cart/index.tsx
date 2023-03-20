@@ -11,6 +11,7 @@ const Cart: FC = () => {
   useEffect(() => {
     if (cartCtx.totalAmount === 0) {
       setShowDetail(false)
+      setCheckoutShow(false)
     }
   }, [cartCtx.totalAmount])
 
